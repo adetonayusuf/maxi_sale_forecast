@@ -89,7 +89,7 @@ Executive Overview
 
 4.  Weather Impact & Drivers
 
-![Weather Impact & Forecast](https://github.com/adetonayusuf/maxi_sale_forecast/blob/main/Weather%20Impact%20%26%20Forecast.png)
+![Weather](https://github.com/adetonayusuf/maxi_sale_forecast/commit/f948f7701de27e01536ce4183bb57dd7b17abeab)
 
 : Visualizes revenue by temperature and category, identifying how different weather conditions influence sales. Includes average temperature, sunshine hours, and category-specific forecast accuracy.
 
