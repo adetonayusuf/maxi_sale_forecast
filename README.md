@@ -71,7 +71,7 @@ The project culminates in a suite of interactive Power BI dashboards, providing 
 
 Executive Overview
 
-![Executive Overview](https://github.com/adetonayusuf/maxi_sale_forecast/blob/main/Executive%20Overview.png)
+![Sum](https://github.com/adetonayusuf/maxi_sale_forecast/blob/main/sum.png)
 
 : High-level KPIs on total units, actual and forecast revenue, forecast accuracy, and overall overstock risk. Includes actual vs. forecasted revenue trends and top-performing categories/products.
 
