@@ -28,7 +28,7 @@ Our data pipeline is structured following the Medallion Architecture, a best-pra
 
 - Gold Layer (Business-Ready): This layer within Snowflake contains highly aggregated and refined datasets optimized for direct consumption. It includes final tables and views, optimized for performance and ease of use by Power BI dashboards.
 
-![architecture](https://github.com/adetonayusuf/maxi_sale_forecast/blob/main/Customer%20weather%20architecture.gif)
+![](https://github.com/adetonayusuf/maxi_sale_forecast/blob/main/Customer%20weather%20architecture1.gif)
 
 
 ### Key Features & Technologies
