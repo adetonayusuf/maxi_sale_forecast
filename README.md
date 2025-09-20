@@ -22,11 +22,11 @@ The project follows a robust data pipeline from raw data ingestion to business i
 
 Our data pipeline is structured following the Medallion Architecture, a best-practice design pattern for building scalable and reliable data lakes.
 
-- Bronze Layer (Raw): Raw, unvalidated data from the Customer Dump File and Weather API is stored as-is in Google Cloud Storage (GCS). This layer serves as the immutable historical record. ![Extraxt Data](https://github.com/adetonayusuf/maxi_sale_forecast/blob/main/extract_data_parquet.py)
+- Bronze Layer (Raw): Raw, unvalidated data from the Customer Dump File and Weather API is stored as-is in Google Cloud Storage (GCS). This layer serves as the immutable historical record.  [Extraxt Data](https://github.com/adetonayusuf/maxi_sale_forecast/blob/main/extract_data_parquet.py)
 
-- Silver Layer (Curated): Data is cleansed, validated, filtered, and integrated within Snowflake. Here, we join customer transaction data with weather conditions and apply business logic to create initial demand signals and enriched datasets.
+- Silver Layer (Transformed): Data is cleansed, validated, filtered, and integrated within Snowflake. Here, we join customer transaction data with weather conditions and apply business logic to create initial demand signals and enriched datasets. [Transformed Date](https://github.com/adetonayusuf/maxi_sale_forecast/blob/main/Snowflake/maxiexternal.sql)
 
-- Gold Layer (Business-Ready): This layer within Snowflake contains highly aggregated and refined datasets optimized for direct consumption. It includes final tables and views, optimized for performance and ease of use by Power BI dashboards. ![](https://github.com/adetonayusuf/maxi_sale_forecast/blob/main/Snowflake/maxiexternal.sql)
+- Gold Layer (Business-Ready): This layer within Snowflake contains highly aggregated and refined datasets optimized for direct consumption. It includes final tables and views, optimized for performance and ease of use by Power BI dashboards.
 
 ![](https://github.com/adetonayusuf/maxi_sale_forecast/blob/main/Customer%20weather%20architecture1.gif)
 
