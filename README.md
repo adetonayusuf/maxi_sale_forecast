@@ -8,25 +8,25 @@ This project demonstrates an end-to-end data engineering solution designed to an
 
 The project follows a robust data pipeline from raw data ingestion to business intelligence dashboards.
 
-Data Ingestion: Multi-source raw data (customer transactions and real-time weather data) is ingested.
+- Data Ingestion: Multi-source raw data (customer transactions and real-time weather data) is ingested.
 
-Orchestration & Infrastructure: The entire GCP infrastructure is provisioned and managed using Terraform for automation and reproducibility.
+- Orchestration & Infrastructure: The entire GCP infrastructure is provisioned and managed using Terraform for automation and reproducibility.
 
-Data Storage & Processing: Raw data is stored in Google Cloud Storage (GCS), and then processed in Snowflake. To optimize costs, data is accessed via Snowflake's external tables linked to GCS.
+- Data Storage & Processing: Raw data is stored in Google Cloud Storage (GCS), and then processed in Snowflake. To optimize costs, data is accessed via Snowflake's external tables linked to GCS.
 
-Data Transformation: Data is transformed and enriched in Snowflake by joining customer transactions with weather data. Business logic is applied to flag demand signals (e.g., Normal, High, Low).
+- Data Transformation: Data is transformed and enriched in Snowflake by joining customer transactions with weather data. Business logic is applied to flag demand signals (e.g., Normal, High, Low).
 
-Analytics & Visualization: The final analytical data is connected from Snowflake to Power BI, where interactive dashboards are created to provide key business insights.
+- Analytics & Visualization: The final analytical data is connected from Snowflake to Power BI, where interactive dashboards are created to provide key business insights.
 
 ### Data Architecture (Medallion Standard)
 
 Our data pipeline is structured following the Medallion Architecture, a best-practice design pattern for building scalable and reliable data lakes.
 
-- Bronze Layer (Raw): Raw, unvalidated data from the Customer Dump File and Weather API is stored as-is in Google Cloud Storage (GCS). This layer serves as the immutable historical record.
+- Bronze Layer (Raw): Raw, unvalidated data from the Customer Dump File and Weather API is stored as-is in Google Cloud Storage (GCS). This layer serves as the immutable historical record. ![Extraxt Data](https://github.com/adetonayusuf/maxi_sale_forecast/blob/main/extract_data_parquet.py)
 
 - Silver Layer (Curated): Data is cleansed, validated, filtered, and integrated within Snowflake. Here, we join customer transaction data with weather conditions and apply business logic to create initial demand signals and enriched datasets.
 
-- Gold Layer (Business-Ready): This layer within Snowflake contains highly aggregated and refined datasets optimized for direct consumption. It includes final tables and views, optimized for performance and ease of use by Power BI dashboards.
+- Gold Layer (Business-Ready): This layer within Snowflake contains highly aggregated and refined datasets optimized for direct consumption. It includes final tables and views, optimized for performance and ease of use by Power BI dashboards. ![](https://github.com/adetonayusuf/maxi_sale_forecast/blob/main/Snowflake/maxiexternal.sql)
 
 ![](https://github.com/adetonayusuf/maxi_sale_forecast/blob/main/Customer%20weather%20architecture1.gif)
 
@@ -35,21 +35,21 @@ Our data pipeline is structured following the Medallion Architecture, a best-pra
 
 Infrastructure as Code: Terraform for provisioning and managing GCP resources (GCS, IAM, Networking).
 
-Data Sources:
+- Data Sources:
 
-- Customer Transactions: A CSV dump file initially loaded into PostgreSQL for structured staging.
+    - Customer Transactions: A CSV dump file initially loaded into PostgreSQL for structured staging.
 
-- Weather Data: Real-time data (temperature, sunshine, conditions) extracted from an external API and stored in GCS.
+    - Weather Data: Real-time data (temperature, sunshine, conditions) extracted from an external API and stored in GCS.
 
-Cloud Platform: Google Cloud Platform (GCP).
+- Cloud Platform: Google Cloud Platform (GCP).
 
-Databases: PostgreSQL for staging and Snowflake for advanced analytics and modeling (utilizing external tables for cost efficiency).
+- Databases: PostgreSQL for staging and Snowflake for advanced analytics and modeling (utilizing external tables for cost efficiency).
 
-Data Storage: Google Cloud Storage (GCS) for raw and processed data.
+- Data Storage: Google Cloud Storage (GCS) for raw and processed data.
 
-Programming: Python for data ingestion, API calls, and pipeline automation.
+- Programming: Python for data ingestion, API calls, and pipeline automation.
 
-Business Intelligence: Power BI for creating comprehensive dashboards and visualizations.
+- Business Intelligence: Power BI for creating comprehensive dashboards and visualizations.
 
 ### Business Insights Gained
 
